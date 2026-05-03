@@ -1,0 +1,22 @@
+{% extends 'master/base.html' %}
+
+
+{% block title %}
+    profile-page
+{% endblock title %}
+
+
+{% block body %}
+   <h1>profile</h1>
+
+   <p>{{request.user.fullname}}</p>
+   <p>{{request.user.user_profile.address}}</p>
+   <p>{{request.user.user_profile.date_of_birth}}</p>
+   <p>{{request.user.user_profile.contact}}</p>
+
+
+   <a href="{% url 'update_profile' %}" class="btn btn-success">Update</a>
+
+
+{% endblock body %}
+    
