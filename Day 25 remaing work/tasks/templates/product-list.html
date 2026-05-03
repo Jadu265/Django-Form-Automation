@@ -1,0 +1,50 @@
+{% extends 'master/base.html' %}
+
+{% block body %}
+<h1>Product List</h1> 
+
+{% if request.user.user_type == 'Seller' %}
+
+    <a href="{% url 'add_product' %}" class="btn btn-success">Add Product</a>
+    
+{% endif %}
+    
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>SL</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total Amount</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+        <tbody>
+
+    {% for product in product_data %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.qty}}</td>
+            <td>{{product.total_amount}}</td>
+            <td>
+                <a href="{% url 'Productview_page' product.id %}" class="btn btn-success">View</a>
+                    {% if request.user.user_type == 'Seller' %} 
+                <a href="{% url 'update_product' product.id %}"  class="btn btn-info">Edit</a>
+                <a href="{% url 'Delete_product' product.id %}" class="btn btn-danger">Delete</a>
+                    {% endif %}
+            </td>
+        </tr>
+   
+        
+    {% endfor %}
+         </tbody>
+</table>
+
+{% endblock body %}

@@ -1,0 +1,13 @@
+{% extends 'master/base.html' %}
+
+
+{% block title %}
+    home-page
+{% endblock title %}
+
+
+{% block body %}
+   <h1>Welcome, {{request.user.username}}</h1>
+   <h3>User Type : {{request.user.user_type}}</h3>
+{% endblock body %}
+    

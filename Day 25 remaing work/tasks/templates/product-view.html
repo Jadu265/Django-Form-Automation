@@ -1,0 +1,21 @@
+{% extends 'master/base.html' %}
+
+
+{% block title %}
+    Product-Page
+{% endblock title %}
+
+
+{% block body %}
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{product_data.name}}</h5>
+    <p class="card-text">Product Description: {{product_data.description}}</p> 
+    <p class="card-text">Product Price: {{product_data.price}}</p> 
+    <p class="card-text">Product Quantity: {{product_data.qty}}</p> 
+    <p class="card-text">Total Amount: {{product_data.total_amount}}</p> 
+    
+  </div>
+</div>
+{% endblock body %}
+    
