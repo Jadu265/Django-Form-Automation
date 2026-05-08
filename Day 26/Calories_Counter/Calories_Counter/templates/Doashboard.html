@@ -1,0 +1,42 @@
+{% extends 'master/base.html' %}
+
+{% block content %}
+{% include 'master/messages.html' %}
+<br>
+<h1>Daily Consumed Calories</h1>
+<br>
+<br>
+    <div class="row">
+  <div class="col-sm-4 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Consumed Calories</h5>
+        <p class="card-text">{{Consumed_calories}} kcal</p>
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">BMR</h5>
+        <p class="card-text">{{Required_calories}} kcal</p>
+        
+      </div>
+    </div>
+  </div>
+
+<div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Less or More Calories</h5>
+        <p class="card-text">{{Less_or_More}} kcal</p>
+      </div>
+    </div>
+  </div>
+</div>
+    
+{% endblock content %}
+    
+
+    

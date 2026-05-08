@@ -1,0 +1,18 @@
+{% extends 'master/base.html' %}
+
+
+{% block content %}
+ {% include 'master/messages.html' %}
+    <h1>Profile</h1>    
+    <p>Name : {{request.user.User_Basic_Info.name}}</p>
+
+    <p>Age : {{request.user.User_Basic_Info.age}}</p>
+    <p>Gender : {{request.user.User_Basic_Info.gender}}</p>
+    <p>Height : {{request.user.User_Basic_Info.height}}</p> 
+    <p>Weight : {{request.user.User_Basic_Info.weight}}</p>
+    <p>BMR : {{request.user.User_Basic_Info.bmr}}</p>
+
+<a href="{% url 'Update_profile' %}" class="btn btn-info">Update Profile</a>
+
+{% endblock content %}
+    
